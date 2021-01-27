@@ -1,0 +1,24 @@
+.faq {
+  .accordion {
+    .card {
+      background-color: transparent;
+    }
+    .card-header {
+      // text-decoration: underline;
+      // text-underline-offset: 4px;
+      cursor: pointer;
+    }
+    .card-body {
+      background-color: transparent;
+      padding-top: .25rem!important;
+      padding-bottom: .25rem!important;
+    }
+  }
+
+  ul.func-list {
+    li {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}

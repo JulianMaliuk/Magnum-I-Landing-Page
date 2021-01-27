@@ -1,0 +1,26 @@
+.system-info {
+  ul {
+    // padding-left: 30px;
+    margin-bottom: 0;
+  }
+  
+  ul.func-list {
+    li {
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+  }
+  
+  .func-list-header {
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .system-title {
+    color: #fff;
+  }
+
+  .c-link {
+    padding-left: 20px;
+  }
+}

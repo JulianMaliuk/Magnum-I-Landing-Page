@@ -1,0 +1,11 @@
+export { default as Header } from './header';
+export { default as HomePage } from './home-page';
+export { default as Layout } from './layout';
+export { default as SelectionSystem } from './selection-system';
+export { default as SEO } from './seo';
+export { default as System } from './system';
+export { default as Systems } from './systems';
+export { default as FAQ } from './faq';
+export { default as ReliableProtection } from './reliable-protection';
+export { default as Contacts } from './contacts';
+export { default as ScrollToTop } from './scroll-to-top';

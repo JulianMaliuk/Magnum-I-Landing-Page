@@ -1,0 +1,13 @@
+.selection-system {
+  .sel-item {
+    &:hover {
+      background-color: #0e0035;
+    }
+    min-height: 88px;
+  }
+
+  hr {
+    margin: 0.3rem 0;
+  }
+
+}

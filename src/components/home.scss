@@ -1,0 +1,42 @@
+#home {
+  height: 100vh;
+  background-position: 0 0 !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-image: url('../images/home-bg.jpg');
+  position: relative;
+
+  @media (max-width: 576px) {
+    background-size: contain !important;
+    background-position: bottom !important;
+
+    .home-content {
+      width: 100%;
+    }
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 64px);
+  }
+
+  .navbar {
+    padding: 1.5rem 2rem 0 2rem;
+  }
+
+  .text-decor {
+    color: #ff4040;
+    border-bottom: 3px solid;
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    text-underline-offset: 12px;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 2px;
+  }
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}

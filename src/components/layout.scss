@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'Magnum';
+  src: url('../fonts/MagnuM-Bold.woff2') format('woff2'),
+      url('../fonts/MagnuM-Bold.woff') format('woff');
+}
+
+.f-magnum {
+  font-family: 'Magnum';
+  color: #fff;
+}
+
+body {
+  color: #fff;
+  background-color: #0d0620;
+  font-family: 'Roboto', sans-serif;
+}
+
+b {
+  font-weight: 600;
+}
+
+.block-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  background-color: #000;
+  opacity: 0.6;
+}
+
+.systems {
+  background-image: url('../images/systems-bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.i {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ff4040;
+}
+
+.list-with-i li::first-letter {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ff4040;
+}
+
+hr {
+  border-color: #fff;
+}
+
+a:hover {
+  color: #52a6ff;
+  text-decoration: none;
+}
