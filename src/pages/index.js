@@ -1,4 +1,4 @@
-import React from "react"
+import React, {} from "react"
 import { useIntl } from "gatsby-plugin-intl"
 
 import { Layout, SEO, HomePage, SelectionSystem, Systems, FAQ, ReliableProtection, Contacts } from '../components'

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Col, Image, Row, Spinner, Badge, Nav, Button, Collapse } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
+import Zoom from 'react-reveal/Zoom';
 import { FormattedMessage, FormattedHTMLMessage } from "gatsby-plugin-intl"
 import { FaBook } from 'react-icons/fa';
 
@@ -8,7 +9,7 @@ import './system.scss'
 
 const System = ({id, img, title, iConf, description, mainFunctions, 
   securFunctions, antiTheftFunctions, notificationFunctions, additionalFeatures, 
-  setOptions, manualUrl, price}) => {
+  setOptions, manualUrl, price, shopUrl}) => {
     return (
     <div id={`MagnuM-${id}`} className='pb-4 system-info'>
       <Fade>
@@ -25,7 +26,7 @@ const System = ({id, img, title, iConf, description, mainFunctions,
               price != null
               ? <h5>
                   <FormattedMessage id='Price' />&nbsp;
-                  <Badge variant="success">{price}
+                  <Badge variant="success">{price}&nbsp;
                     <FormattedMessage id='uah' /> 
                   </Badge>&nbsp;
                   <FormattedMessage id='withVAT' /> 
@@ -37,7 +38,9 @@ const System = ({id, img, title, iConf, description, mainFunctions,
         </Row>
         <Row>
           <Col md={5} >
-            <Image src={img} rounded fluid className='mr-0 mb-3' style={{border: '1px solid #1b1b1b'}} />
+            <Zoom timeout={500}>
+              <Image src={img} rounded fluid className='mr-0 mb-3' style={{border: '1px solid #1b1b1b'}} />
+            </Zoom>
           </Col>
           <Col md={7} >
             <ul style={{listStyle: 'none', lineHeight: '29px', paddingLeft: '0px'}} className='list-with-i'>
@@ -104,7 +107,7 @@ const System = ({id, img, title, iConf, description, mainFunctions,
             <a className='c-link' href={manualUrl} target='_blank' rel="noreferrer"><FaBook /> <FormattedMessage id='ElectronicVersionOfTheInstructions' /></a>
           </Col>
           <Col md='6' className='text-center text-md-right pt-3 pt-md-0'>
-            <a href='https://shop.magnum.com.ua/products/car-alarm' target='_blank' rel="noreferrer">
+            <a href={shopUrl} target='_blank' rel="noreferrer">
               <Button variant="outline-info"><FormattedMessage id='Buy' /></Button>
             </a>
           </Col>

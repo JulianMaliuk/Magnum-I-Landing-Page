@@ -21,7 +21,9 @@ const Systems = () => {
     async function fetchData() {
       try {
         const response = await axios.get('/prices.json');
-        setPrices(response.data);
+        const { course, prices } = response.data 
+        const pricesUAH = Object.keys(prices).reduce((acc, key) => {acc[key] = Math.round(prices[key] * course); return acc; }, {})
+        setPrices(pricesUAH);
       } catch {}
     }
     fetchData();
@@ -50,13 +52,14 @@ const Systems = () => {
             mobApp: true,
             autostart: false,
           }}
-          description={[0,1,2,3]}
-          mainFunctions={[1,3,4,5,6,7,8,9,10,13,14]}
+          description={[0,1,3,4]}
+          mainFunctions={[2,5,6,7,8,10,13,14,15]}
           securFunctions={[1,2,3,4,5,6,7,8,9,10,11,12,13]}
           antiTheftFunctions={[2,3,4,5,6,7,8]}
           notificationFunctions={[1,2,3,4,5]}
           additionalFeatures={[1,2,3,4,7,9,10,11,13,14,15,16]}
           setOptions={[1,3,4,5,6,7,8,11,12,13,14]}
+          shopUrl='https://shop.magnum.com.ua/products/car-alarm/magnum-i-il10'
           manualUrl='https://magnum-i.docs.stoplight.io/iL10' >
         </System>
         <hr />
@@ -77,13 +80,14 @@ const Systems = () => {
             mobApp: true,
             autostart: false,
           }}
-          description={[0,2,3]}
-          mainFunctions={[1,3,4,5,6,7,8,9,10,13,14]}
+          description={[0,2,3,4]}
+          mainFunctions={[1,3,4,5,6,7,8,10,13,14,15]}
           securFunctions={[1,2,3,4,5,6,7,8,9,10,11,12,13]}
           antiTheftFunctions={[2,3,4,5,6,7,8]}
           notificationFunctions={[1,2,3,4,5]}
           additionalFeatures={[1,2,3,4,5,6,7,8,9,10,11,13,14,15,16]}
           setOptions={[1,2,3,4,5,6,7,8,11,12,13,14]}
+          shopUrl='https://shop.magnum.com.ua/products/car-alarm/magnum-i-il20'
           manualUrl='https://magnum-i.docs.stoplight.io/iL20' />
         <hr />
         <System 
@@ -103,13 +107,14 @@ const Systems = () => {
             mobApp: true,
             autostart: true,
           }}
-          description={[0,1,2,3]}
-          mainFunctions={[2,5,6,7,8,9,10,11,12,13,14]}
+          description={[0,1,3,5,6]}
+          mainFunctions={[2,5,6,7,9,10,11,12,13,14,15]}
           securFunctions={[1,2,3,4,5,6,7,8,9,10,11,12,14]}
           antiTheftFunctions={[1,2,3,4,5,6,7,8]}
           notificationFunctions={[1,2,3,4,5]}
           additionalFeatures={[1,2,3,4,7,8,9,10,11,12,13,14,15,16]}
           setOptions={[1,3,4,5,6,7,8,9,10,11,12,13,14]}
+          shopUrl='https://shop.magnum.com.ua/products/car-alarm/magnum-i-is40'
           manualUrl='https://magnum-i.docs.stoplight.io/iS40' />
         <hr />
         <System 
@@ -129,13 +134,14 @@ const Systems = () => {
             mobApp: true,
             autostart: true,
           }}
-          description={[0,2,3]}
-          mainFunctions={[1,3,4,5,6,7,8,9,10,11,12,13,14]}
+          description={[0,2,3,5,6]}
+          mainFunctions={[1,3,4,5,6,7,9,10,11,12,13,14,15]}
           securFunctions={[1,2,3,4,5,6,7,8,9,10,11,12,14]}
           antiTheftFunctions={[1,2,3,4,5,6,7,8]}
           notificationFunctions={[1,2,3,4,5]}
           additionalFeatures={[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}
           setOptions={[1,2,3,4,5,6,7,8,9,10,11,12,13,14]}
+          shopUrl='https://shop.magnum.com.ua/products/car-alarm/magnum-i-is80'
           manualUrl='https://magnum-i.docs.stoplight.io/iS80' />
       </Container>
     </div>

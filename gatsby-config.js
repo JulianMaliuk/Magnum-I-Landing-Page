@@ -1,17 +1,45 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
   siteMetadata: {
     title: `MagnuM I Series`,
     description: ``,
+    siteUrl: `https://magnum.com.ua`
+  },
+  flags: {
+    DEV_SSR: false,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-sass",
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-123057198-4",
+      },
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-offline",
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `MagnuM I Series`,
+        short_name: `Magnum I`,
+        start_url: `/`,
+        background_color: `#0d0620`,
+        theme_color: `#0d0620`,
+        display: `fullscreen`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
     {
       resolve: `gatsby-plugin-intl`,
       options: {
@@ -25,35 +53,9 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         path: `${__dirname}/src/intl`,
         name: `intl`,
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `MagnuM I Series`,
-        short_name: `Magnum I`,
-        start_url: `/`,
-        background_color: `#0d0620`,
-        theme_color: `#0d0620`,
-        display: `fullscreen`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        precachePages: [`/ru/`, `/uk/`],
-      },
-    },
   ],
-}
+};

@@ -58,3 +58,12 @@ a:hover {
   color: #52a6ff;
   text-decoration: none;
 }
+
+@media (max-width: 576px) {
+  h3 {
+    font-size: 1.35rem;
+  }
+  h5 {
+    font-size: 1.15rem;
+  }
+}

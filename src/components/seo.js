@@ -41,7 +41,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: 'author',
-          content: 'Julian Maliuk'
+          content: 'Julian Maliuk, Julian.maljuk@gmail.com'
         },
         {
           property: `og:title`,
