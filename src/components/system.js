@@ -6,10 +6,11 @@ import { FormattedMessage, FormattedHTMLMessage } from "gatsby-plugin-intl"
 import { FaBook } from 'react-icons/fa';
 
 import './system.scss'
+import { toUAH } from './systems';
 
 const System = ({id, img, title, iConf, description, mainFunctions, 
   securFunctions, antiTheftFunctions, notificationFunctions, additionalFeatures, 
-  setOptions, manualUrl, price, shopUrl}) => {
+  setOptions, manualUrl, price, shopUrl, iGPSActivation }) => {
     return (
     <div id={`MagnuM-${id}`} className='pb-4 system-info'>
       <Fade>
@@ -95,6 +96,39 @@ const System = ({id, img, title, iConf, description, mainFunctions,
               </ul>
             </ToggleBlock>
 
+            {
+              iGPSActivation && <ToggleBlock title='IGPSActivation.0'>
+                <div style={{ fontSize: '.95rem' }}>
+                  <p style={{ fontSize: '.95rem', paddingLeft: '12px' }}>
+                    <FormattedHTMLMessage 
+                      id='IGPSActivation.1'
+                      values={{ price: toUAH(iGPSActivation.course, 60) }} 
+                    />
+                       <br />
+                    <FormattedMessage id='IGPSActivation.2' />
+                  </p>
+
+                  <ol className='func-list' style={{ paddingLeft: '25px' }}>
+                    <li><FormattedMessage id={`IGPSActivation.3`} /></li>
+                    <li><FormattedMessage id={`IGPSActivation.4`} /></li>
+                    <li><FormattedMessage id={`IGPSActivation.5`} /></li>
+                    <li><FormattedMessage id={`IGPSActivation.6`} /></li>
+                      <ToggleBlock title='EnterProgrammingMode.0'>
+                        <ol className='func-list' style={{ paddingLeft: '25px' }}>
+                          <li><FormattedMessage id={`EnterProgrammingMode.1`} /></li>
+                          <li><FormattedMessage id={`EnterProgrammingMode.2`} /></li>
+                          <li><FormattedMessage id={`EnterProgrammingMode.3`} /></li>
+                          <li><FormattedMessage id={`EnterProgrammingMode.4`} /></li>
+                        </ol>
+                      </ToggleBlock>
+                    <li><FormattedMessage id={`IGPSActivation.7`} /></li>
+                    <li><FormattedMessage id={`IGPSActivation.8`} /></li>
+                    <li><FormattedMessage id={`IGPSActivation.9`} /></li>
+                  </ol>
+                </div>
+              </ToggleBlock>
+            }
+
             <ToggleBlock title='SetOptions.0'>
               <ul className='func-list'>
                 {setOptions.map(item => <li key={item}><FormattedHTMLMessage id={`SetOptions.${item}`} /></li>)}
@@ -141,100 +175,3 @@ const ToggleBlock = ({title, children}) => {
 }
 
 export default System;
-
-
-            {/* <Accordion defaultActiveKey="-1">
-              <Card bg='transparent'>
-                <Accordion.Toggle as={Card.Header} eventKey="0" className='pb-1'>
-                  <h6 className='func-list-header'>
-                    <FormattedMessage id='MainFunctionsOfTheSystem.0' />
-                    <span style={{fontSize: '13px', paddingLeft: '8px'}}> ▼</span>
-                  </h6>
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="0">
-                  <Card.Body className='py-1'>
-
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-
-              <Card bg='transparent'>
-                <Accordion.Toggle as={Card.Header} eventKey="1" className='pb-1'>
-                  <h6 className='func-list-header'>
-                    <FormattedMessage id='SecurityFunctionsOfTheSystem.0' />
-                    <span style={{fontSize: '13px', paddingLeft: '8px'}}> ▼</span>  
-                  </h6>
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="1">
-                  <Card.Body className='py-1'>
-                    <ul className='func-list'>
-                      {securFunctions}
-                    </ul>
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-
-              <Card bg='transparent'>
-                <Accordion.Toggle as={Card.Header} eventKey="2" className='pb-1'>
-                  <h6 className='func-list-header'>
-                    <FormattedMessage id='AntiTheftFunctions.0' />
-                    <span style={{fontSize: '13px', paddingLeft: '8px'}}> ▼</span>  
-                  </h6>
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="2">
-                  <Card.Body className='py-1'>
-                    <ul className='func-list'>
-                      {antiTheftFunctions}
-                    </ul>
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-
-              <Card bg='transparent'>
-                <Accordion.Toggle as={Card.Header} eventKey="3" className='pb-1'>
-                  <h6 className='func-list-header'>
-                    <FormattedMessage id='NotificationFunctions.0' />
-                    <span style={{fontSize: '13px', paddingLeft: '8px'}}> ▼</span>  
-                  </h6>
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="3">
-                  <Card.Body className='py-1'>
-                    <ul className='func-list'>
-                      {notificationFunctions}
-                    </ul>
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-              
-              <Card bg='transparent'>
-                <Accordion.Toggle as={Card.Header} eventKey="4" className='pb-1'>
-                  <h6 className='func-list-header'>
-                    <FormattedMessage id='AdditionalFeatures.0' />
-                    <span style={{fontSize: '13px', paddingLeft: '8px'}}> ▼</span>  
-                  </h6>
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="4">
-                  <Card.Body className='py-1'>
-                    <ul className='func-list'>
-                      {additionalFeatures}
-                    </ul>
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-              
-              <Card bg='transparent'>
-                <Accordion.Toggle as={Card.Header} eventKey="5" className='pb-1'>
-                  <h6 className='func-list-header'>
-                    <FormattedMessage id='SetOptions.0' />
-                    <span style={{fontSize: '13px', paddingLeft: '8px'}}> ▼</span>  
-                  </h6>
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="5">
-                  <Card.Body className='py-1'>
-                    <ul className='func-list'>
-                      {setOptions}
-                    </ul>
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-            </Accordion>  */}

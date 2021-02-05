@@ -8,6 +8,12 @@ import iImageIL20 from '../images/i-image-iL20.jpg'
 import iImageIS40 from '../images/i-image-iS40.jpg'
 import iImageIS80 from '../images/i-image-iS80.jpg'
 
+export const toUAH = (usd, value) => {
+  const withCourse = Math.round(value * usd);
+  const withRound10 = Math.round(withCourse / 10) * 10;  
+  return withRound10;
+}
+
 const Systems = () => {
 
   const [prices, setPrices] = useState({
@@ -16,13 +22,18 @@ const Systems = () => {
     iS40: null,
     iS80: null,
   })
+  const [course, setCourse] = useState(0)
 
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await axios.get('/prices.json');
         const { course, prices } = response.data 
-        const pricesUAH = Object.keys(prices).reduce((acc, key) => {acc[key] = Math.round(prices[key] * course); return acc; }, {})
+        setCourse(course);
+        const pricesUAH = Object.keys(prices).reduce((acc, key) => { 
+          acc[key] = toUAH(course, prices[key]);
+          return acc; 
+        }, {})
         setPrices(pricesUAH);
       } catch {}
     }
@@ -53,12 +64,13 @@ const Systems = () => {
             autostart: false,
           }}
           description={[0,1,3,4]}
-          mainFunctions={[2,5,6,7,8,10,13,14,15]}
+          mainFunctions={[2,5,6,7,9,11,14,15,16]}
           securFunctions={[1,2,3,4,5,6,7,8,9,10,11,12,13]}
           antiTheftFunctions={[2,3,4,5,6,7,8]}
           notificationFunctions={[1,2,3,4,5]}
           additionalFeatures={[1,2,3,4,7,9,10,11,13,14,15,16]}
           setOptions={[1,3,4,5,6,7,8,11,12,13,14]}
+          iGPSActivation={{ course }}
           shopUrl='https://shop.magnum.com.ua/products/car-alarm/magnum-i-il10'
           manualUrl='https://magnum-i.docs.stoplight.io/iL10' >
         </System>
@@ -81,12 +93,13 @@ const Systems = () => {
             autostart: false,
           }}
           description={[0,2,3,4]}
-          mainFunctions={[1,3,4,5,6,7,8,10,13,14,15]}
+          mainFunctions={[1,3,4,5,6,7,9,11,14,15,16]}
           securFunctions={[1,2,3,4,5,6,7,8,9,10,11,12,13]}
           antiTheftFunctions={[2,3,4,5,6,7,8]}
           notificationFunctions={[1,2,3,4,5]}
           additionalFeatures={[1,2,3,4,5,6,7,8,9,10,11,13,14,15,16]}
           setOptions={[1,2,3,4,5,6,7,8,11,12,13,14]}
+          iGPSActivation={{ course }}
           shopUrl='https://shop.magnum.com.ua/products/car-alarm/magnum-i-il20'
           manualUrl='https://magnum-i.docs.stoplight.io/iL20' />
         <hr />
@@ -108,7 +121,7 @@ const Systems = () => {
             autostart: true,
           }}
           description={[0,1,3,5,6]}
-          mainFunctions={[2,5,6,7,9,10,11,12,13,14,15]}
+          mainFunctions={[2,5,6,8,10,11,12,13,14,15,16]}
           securFunctions={[1,2,3,4,5,6,7,8,9,10,11,12,14]}
           antiTheftFunctions={[1,2,3,4,5,6,7,8]}
           notificationFunctions={[1,2,3,4,5]}
@@ -135,7 +148,7 @@ const Systems = () => {
             autostart: true,
           }}
           description={[0,2,3,5,6]}
-          mainFunctions={[1,3,4,5,6,7,9,10,11,12,13,14,15]}
+          mainFunctions={[1,3,4,5,6,8,10,11,12,13,14,15,16]}
           securFunctions={[1,2,3,4,5,6,7,8,9,10,11,12,14]}
           antiTheftFunctions={[1,2,3,4,5,6,7,8]}
           notificationFunctions={[1,2,3,4,5]}

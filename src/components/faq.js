@@ -1,4 +1,4 @@
-import { FormattedMessage } from 'gatsby-plugin-intl';
+import { FormattedHTMLMessage, FormattedMessage } from 'gatsby-plugin-intl';
 import React from 'react';
 import { Container, Accordion, Card } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
@@ -9,7 +9,7 @@ const Faq = () => {
   return (
     <Container id='faq' className='faq py-5'>
       <Fade>
-        <h3 className="pb-4 text-center">Типові запитання</h3>
+        <h3 className="pb-4 text-center"><FormattedMessage id='FrequentlyAskedQuestions' /></h3>
       </Fade>
 
       <Fade left>
@@ -69,7 +69,7 @@ const Faq = () => {
                   <li key='0'><FormattedMessage id='ProductWarranty.1' /></li>
                   <li key='1'><FormattedMessage id='ProductWarranty.2' /></li>
                   <li key='2'><FormattedMessage id='ProductWarranty.3' /></li>
-                  <li key='3'><FormattedMessage id='ProductWarranty.4' /></li>
+                  <li key='3'><FormattedHTMLMessage id='ProductWarranty.4' /></li>
                   <li key='4'><FormattedMessage id='ProductWarranty.5' /></li>
                   <li key='5'><FormattedMessage id='ProductWarranty.6' /></li>
                   <li key='6'><FormattedMessage id='ProductWarranty.7' /></li>
@@ -102,7 +102,10 @@ const Faq = () => {
               <Card.Body>
                 <ul className='func-list'>
                   <li key='0'><FormattedMessage id='InformationForInstallers.1' /></li>
-                  <li key='1'><FormattedMessage id='InformationForInstallers.2' /></li>
+                  <li key='1'>
+                    <FormattedHTMLMessage id='InformationForInstallers.2' />&nbsp;
+                    <a href='https://forms.gle/KbJehfdZrJcRdjYW7' target='_blank'><FormattedHTMLMessage id='InformationForInstallers.3' /></a>
+                  </li>
                 </ul>
               </Card.Body>
             </Accordion.Collapse>
