@@ -3,12 +3,12 @@ import { Container, Col, Row, Button, Nav } from 'react-bootstrap';
 import { BiCheck } from 'react-icons/bi';
 import Fade from 'react-reveal/Fade';
 
-import carKey from '../images/car-key.svg';
-import carKeyBlack from '../images/car-key-black.svg';
-import carEngine from '../images/car-engine.svg';
-import carEngineNotSupport from '../images/car-engine-not-support.svg';
-import gps from '../images/gps.svg';
-import gpsNotSupport from '../images/gps-not-support.svg';
+import carKey from '../images/car-key.png';
+import carKeyBlack from '../images/car-key-black.png';
+import carEngine from '../images/car-engine.png';
+import carEngineNotSupport from '../images/car-engine-not-support.png';
+import gps from '../images/gps.png';
+import gpsNotSupport from '../images/gps-not-support.png';
 import './selection-system.scss'
 import { FormattedMessage } from "gatsby-plugin-intl";
 
