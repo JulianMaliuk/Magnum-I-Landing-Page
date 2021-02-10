@@ -59,6 +59,15 @@ a:hover {
   text-decoration: none;
 }
 
+.gps-price {
+  color: #fff;
+  background-color: #28a745;
+  padding: .2rem .4rem;
+  border-radius: .3rem;
+  font-weight: bold;
+  font-size: .9rem;
+}
+
 @media (max-width: 576px) {
   h3 {
     font-size: 1.35rem;
