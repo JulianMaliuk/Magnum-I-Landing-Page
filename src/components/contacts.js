@@ -4,7 +4,7 @@ import { FiPhoneCall } from 'react-icons/fi';
 import { ImLocation } from 'react-icons/im';
 import { FaFacebookSquare, FaGlobe } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
-import { FormattedMessage } from 'gatsby-plugin-intl';
+import { FormattedMessage, FormattedHTMLMessage } from 'gatsby-plugin-intl';
 import Fade from 'react-reveal/Fade';
 
 const Contacts = () => {
@@ -24,6 +24,7 @@ const Contacts = () => {
                 <FiPhoneCall size='1.5em' style={{color: '#4adc4a', float: 'left', marginRight: '10px'}} />
                 <p>+38 (067) 628-18-77</p>
                 <em><FormattedMessage id='SalesDepartmentPhone.operatingMode' /></em>
+                <p className='pt-3'><em><FormattedHTMLMessage id='TheSaleICarriedOutByOfficialRepresentative' /></em></p>
               </div>
 
               <h5 className='text-center'><FormattedMessage id='TechnicalSupportPhone.title' />:</h5>

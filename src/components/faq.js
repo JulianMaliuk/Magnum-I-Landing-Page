@@ -73,6 +73,7 @@ const Faq = () => {
                   <li key='4'><FormattedMessage id='ProductWarranty.5' /></li>
                   <li key='5'><FormattedMessage id='ProductWarranty.6' /></li>
                   <li key='6'><FormattedMessage id='ProductWarranty.7' /></li>
+                  <li key='7'><FormattedMessage id='ProductWarranty.8' /></li>
                 </ul>  
               </Card.Body>
             </Accordion.Collapse>
